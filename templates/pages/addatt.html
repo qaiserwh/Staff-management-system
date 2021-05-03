@@ -1,0 +1,49 @@
+ {% extends 'home.html' %}
+{% block content %}
+    <div class="" id="home">
+        <nav class="navbar navbar-expand-xl">
+            <div class="container h-100">
+                <a class="navbar-brand" href="{% url 'index' %}">
+                <a> <img style="   width: 109px;" src="media\photos\logo.png" alt="Image text">
+                </a>
+                    <h1 class="tm-site-title mb-0">IKC Human Resource Management</h1>
+                </a>
+                <button class="navbar-toggler ml-auto mr-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars tm-nav-icon"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto h-100">
+                      
+                         
+                       <li class="nav-item">
+                            <a class="nav-link" href="{% url 'Attendance' %}">
+                                <i class="fab fa-buromobelexperte"></i>
+                               <strong> الحضور</strong>
+                            </a>
+                        </li>
+                    </ul>      
+                </div>
+            </div>
+        </nav>
+
+
+
+            <!-- /.card-header -->
+            <!-- form start -->
+            <form method="POST" enctype="multipart/form-data"  > 
+            {%csrf_token%}
+              <div class="card-body"> 
+                {{forms}}
+                <small id='totalrente' class="form-text text-muted"></small>
+              </div>
+              <!-- /.card-body -->
+              <div class="card-footer">
+                <button type="submit" class="btn btn-primary" >أضافة</button>
+              </div>
+            </form>
+          </div>
+  
+                <!-- /.card -->
+          </div>
+          {% endblock content %}

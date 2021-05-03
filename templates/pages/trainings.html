@@ -1,0 +1,43 @@
+{% extends 'home.html' %}
+
+{% block content %}
+{% include 'nave/nav.html' %}
+
+              <div class="card-footer">
+                <a href="{% url 'addtraning' %}" class="btn btn-primary">اضافة تدريب</a>
+              </div>
+ <div class="col-12 tm-block-col">
+                    <div class="tm-bg-primary-dark tm-block tm-block-taller tm-block-scroll">
+                        <h2 class="tm-block-title">قائمة تدريبات الموظفين</h2>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">الاسم</th>
+                                    <th scope="col">بعنوان</th>
+                                    <th scope="col">وصف التدريب</th>
+                           
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% for i in eml %}
+                                <tr>
+                                
+                                    <td><b>{{i.names}}</b></td>
+                                    <td><b>{{i.title}}</b></td>
+                                    <td><b>{{i.description}}</b></td>
+                              
+                                    
+                                   
+                                </tr>
+                                 {% endfor %}
+                              
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+   
+    </div>
+
+    {% endblock content %}

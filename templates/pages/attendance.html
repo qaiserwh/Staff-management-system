@@ -1,0 +1,47 @@
+{% extends 'home.html' %}
+{% block content %}
+{% include 'nave/nav.html' %}
+
+    <form method="GET"  action="{% url 'Attendance' %}"class="form-inline ml-3">
+      <div class="input-group input-group-sm">
+        <input class="form-control form-control-navbar" name="search_name" type="search" placeholder=".... Search" aria-label="Search">
+        <div class="input-group-append">
+          <button class="btn btn-navbar" type="submit">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
+    </form>
+              <div class="card-footer">
+                <a href="{% url 'addatt' %}" class="btn btn-primary">اضافة  حضور</a>
+              </div>
+  
+ <div class="col-12 tm-block-col">
+                    <div class="tm-bg-primary-dark tm-block tm-block-taller tm-block-scroll">
+                        <h2 class="tm-block-title">Empleoys Attendance</h2>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">الاسم</th>
+                                    <th scope="col">الحالة</th>
+                                    <th scope="col">بتاريخ</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% for i in em %}
+                                <tr>
+                                    <td><b>{{i.name_employ}}</b></td>
+                                    <td><b>{{i.status}}</b></td>
+                                    <td><b>{{i.date}}</b></td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+   
+    </div>
+
+    {% endblock content %}

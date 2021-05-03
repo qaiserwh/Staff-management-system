@@ -1,0 +1,63 @@
+    <div class="" id="home">
+        <nav class="navbar navbar-expand-xl">
+            <div class="container h-100">
+                <a class="navbar-brand" href="{% url 'index' %}">
+                <a> <img style="   width: 109px;" src="media\photos\logo.png" alt="Image text">
+                </a>
+                    <h1 class="tm-site-title mb-0">IKC Human Resource Management</h1>
+                </a>
+                <button class="navbar-toggler ml-auto mr-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars tm-nav-icon"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto h-100">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'index' %}">
+                                <i class="fas fa-clipboard-list"></i>
+                                <strong>القائمة </strong>
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'info' %}">
+                                <i class="fas fa-id-card"></i>
+                                 <strong>الملفات</strong>
+                            </a>
+                        </li>
+                       <li class="nav-item">
+                            <a class="nav-link" href="{% url 'Attendance' %}">
+                                <i class="fab fa-buromobelexperte"></i>
+                               <strong> الحضور</strong>
+                            </a>
+                        </li>
+                       <li class="nav-item">
+                            <a class="nav-link" href="{% url 'vacation' %}">
+                                <i class="fas fa-clipboard-check"></i>
+                               <strong> الاجازات</strong>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'Trainings' %}">
+                               <i class="fab fa-accusoft"></i>
+                               <strong> التدريب</strong>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'admin/' %}">
+                                <i class="fas fa-cog"></i>
+                             <strong>ألأعدادت</strong>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link d-block" href="{% url 'login' %}">
+                            <i class="fas fa-sign-out-alt"></i>
+                               <strong><b>Logout</b> </strong>
+                            </a>
+                        </li>
+                    </ul>      
+                </div>
+            </div>
+        </nav>

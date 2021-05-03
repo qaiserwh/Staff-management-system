@@ -1,0 +1,58 @@
+
+{% extends 'home.html' %}
+
+{% block content %}
+{% include 'nave/nav.html' %}
+
+
+    <form method="GET"  action="{% url 'index' %}"class="form-inline ml-3">
+      <div class="input-group input-group-sm">
+        <input class="form-control form-control-navbar" name="search_name" type="search" placeholder=".... Search" aria-label="Search">
+        <div class="input-group-append">
+          <button class="btn btn-navbar" type="submit">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
+    </form>
+
+                <div class="col-12 tm-block-col">
+                    <div class="tm-bg-primary-dark tm-block tm-block-taller tm-block-scroll">
+                        <h2 class="tm-block-title">قائمة الموظفين</h2>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">الاسم</th>
+                                    <th scope="col">العمر</th>
+                                    <th scope="col">الراتب</th>
+                                    <th scope="col">رقم الهاتف</th>
+                                    <th scope="col">EMAIL</th>
+                                    <th scope="col">عنوان السكن</th>
+                                    <th scope="col">القسم</th>
+                                    <th scope="col">الشهادة</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% for i in emp %}
+                                <tr>
+                                
+                                    <td><b>{{i.name}}</b></td>
+                                    <td><b>{{i.age}}</b></td>
+                                    <td><b>{{i.salary}}IQD</b></td>
+                                    <td><b>{{i.phonenumber}}</b></td>
+                                    <td>{{i.Email}}</td>
+                                    <td>{{i.address}}</td>
+                                    <td>{{i.Departments}}</td>
+                                    <td><strong>{{i.Degree}}</strong></td>
+                                </tr>
+                                 {% endfor %}
+                              
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+   
+    </div>
+{% endblock content %}

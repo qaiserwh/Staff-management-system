@@ -1,0 +1,46 @@
+{% extends 'home.html' %}
+{% block content %}
+{% include 'nave/nav.html' %}
+
+              <div class="card-footer">
+                <a href="{% url 'addveca' %}" class="btn btn-primary">اضافة اجازة</a>
+              </div>
+ <div class="col-12 tm-block-col">
+                    <div class="tm-bg-primary-dark tm-block tm-block-taller tm-block-scroll">
+                        <h2 class="tm-block-title">قائمة أجازات الموظفين</h2>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">الاسم</th>
+                                    <th scope="col">العنوان</th>
+                                    <th scope="col">بدأت في</th>
+                                    <th scope="col">تنتهي في</th>
+                                    <th scope="col">الغرض</th>
+                           
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% for i in emr %}
+                                <tr>
+                                
+                                    <td><b>{{i.employ_name}}</b></td>
+                                    <td><b>{{i.title}}</b></td>
+                                    <td><b>{{i.start_date}}</b></td>
+                                    <td><b>{{i.end_date}}</b></td>
+                                    <td><b>{{i.purpose}}</b></td>
+                              
+                                    
+                                   
+                                </tr>
+                                 {% endfor %}
+                              
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+   
+    </div>
+
+ {% endblock content %}
